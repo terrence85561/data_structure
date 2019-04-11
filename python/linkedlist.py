@@ -6,13 +6,18 @@ class Node:
 
 class LinkedList:
     def __init__(self):
-        self.dummyNode = Node(None)
+        self.dummyNode = None
+        self.size = 0
+
     
     def getDummyHead(self):
         return self.dummyNode
     
     def isEmpty(self):
-        return self.dummyNode.val == None
+        if self.dummyNode == None:
+            return True
+        elif self.dummyNode != None:
+            return False
     
     def deleteLinkedList(self):
         head = self.getDummyHead()
@@ -22,9 +27,10 @@ class LinkedList:
             current_node = None            
 
     def add_back(self,val):
-        if self.dummyNode.val == None:
+        if self.dummyNode == None:
             newNode = Node(val)
             self.dummyNode = newNode
+            self.size+=1
         else:
             last_node = self.dummyNode
             newNode = Node(val)
@@ -32,36 +38,51 @@ class LinkedList:
                 last_node = last_node.next
             last_node.next = newNode
             last_node.prev = last_node
-    
+            self.size+=1
+
+        
+    def insertAfterNode(self,prevNode,val):
+        if prevNode == None:
+            print('prev node is not in list')
+            return
+        else:
+            newNode = Node(val) 
+            newNode.next = prevNode.next
+            prevNode.next = newNode
+
+
     def add_front(self,val):
         newNode = Node(val)
         newNode.next = self.dummyNode
         self.dummyNode = newNode
+        self.size+=1
 
     def printList(self):
         current_node = self.getDummyHead()
-        while(current_node.next!=None):
+        while(current_node!=None):
             print(current_node.val)
             current_node = current_node.next
             
+    def getLength(self):
+        return self.size
 
-    
+
 if __name__=="__main__":
-    # ll = LinkedList()
-    # ll.add_back(1)
-    # ll.add_back(2)
-    # ll.add_back(3)
+    ll = LinkedList()
+    ll.add_back(1)
+    ll.add_back(2)
+    ll.add_back(3)
+    ll.insertAfterNode(ll.dummyNode.next,4)
+    ll.printList()
     
-    # ll.printList()
 
     llist = LinkedList()
     llist.add_front(1)
     llist.add_front(2)
     llist.add_front(3)
-    llist.printList()
+    # llist.printList()
 
-    # ll.deleteLinkedList()
-    # ll.printList()
+  
 
     
 
