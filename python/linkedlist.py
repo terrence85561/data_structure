@@ -27,18 +27,14 @@ class LinkedList:
             current_node = None            
 
     def add_back(self,val):
+        newNode = Node(val)
         if self.dummyNode == None:
-            newNode = Node(val)
             self.dummyNode = newNode
-            self.size+=1
         else:
-            last_node = self.dummyNode
-            newNode = Node(val)
-            while(last_node.next!=None):
-                last_node = last_node.next
-            last_node.next = newNode
-            last_node.prev = last_node
-            self.size+=1
+            prevNode = self.dummyNode
+            while(prevNode.next != None):
+                prevNode = prevNode.next
+            prevNode.next = newNode
 
         
     def insertAfterNode(self,prevNode,val):
