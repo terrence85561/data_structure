@@ -124,7 +124,23 @@ public class SinglyLinkedList {
         }
         return prevNode;
     }
+
+    public Node findMidNodeOfList(Node head){
+        Node midPtr;
+        Node guidePtr;
+        // guide pointer always goes two times way of midPtr
+        midPtr = head;
+        guidePtr = head;
+        while(guidePtr!=null && guidePtr.next!=null){
+            midPtr = midPtr.next;
+            guidePtr = guidePtr.next.next;
+        }
+        return midPtr;
+    }
+
     public void printLinkedList(Node head){
+        System.out.printf("print linkedlist:\n");
+
         if (isEmpty()){
             System.out.println("there is no ll to print");
         }else{
@@ -144,18 +160,21 @@ public class SinglyLinkedList {
         singlyLinkedList.push_back(3);
         singlyLinkedList.insertAfterNode(singlyLinkedList.dummyHead.next,4);
         singlyLinkedList.insertAtIndex(3,5);
+        singlyLinkedList.printLinkedList(singlyLinkedList.dummyHead);
+
         singlyLinkedList.deleteFirstNode();
         singlyLinkedList.deleteLastNode();
         Node head = singlyLinkedList.getHead();
         singlyLinkedList.printLinkedList(head);
+        Node midNode = singlyLinkedList.findMidNodeOfList(head);
+        System.out.printf("the value of middle node in this linkedlist is %d\n",midNode.data);
+
         Node node = singlyLinkedList.find(2);
         System.out.printf("the node your want to find is %d\n",node.data);
         Node reverseHead = singlyLinkedList.reverse();
         singlyLinkedList.printLinkedList(reverseHead);
-
+        midNode = singlyLinkedList.findMidNodeOfList(reverseHead);
+        System.out.printf("the value of middle node in this linkedlist is %d\n",midNode.data);
 
     }
-
-
-
 }
