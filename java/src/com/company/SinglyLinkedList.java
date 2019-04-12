@@ -14,7 +14,9 @@ public class SinglyLinkedList {
             this.next = null;
         }
     }
-
+    public Node getHead(){
+        return dummyHead;
+    }
     public int getLength(){
         return length;
     }
@@ -122,11 +124,11 @@ public class SinglyLinkedList {
         }
         return prevNode;
     }
-    public void printLinkedList(){
+    public void printLinkedList(Node head){
         if (isEmpty()){
             System.out.println("there is no ll to print");
         }else{
-            Node currentNode = dummyHead;
+            Node currentNode = head;
             while(currentNode!=null){
                 System.out.println(currentNode.data);
                 currentNode = currentNode.next;
@@ -144,11 +146,12 @@ public class SinglyLinkedList {
         singlyLinkedList.insertAtIndex(3,5);
         singlyLinkedList.deleteFirstNode();
         singlyLinkedList.deleteLastNode();
-        singlyLinkedList.printLinkedList();
+        Node head = singlyLinkedList.getHead();
+        singlyLinkedList.printLinkedList(head);
         Node node = singlyLinkedList.find(2);
         System.out.printf("the node your want to find is %d\n",node.data);
-        Node head = singlyLinkedList.reverse();
-        System.out.println(head.next.data);
+        Node reverseHead = singlyLinkedList.reverse();
+        singlyLinkedList.printLinkedList(reverseHead);
 
 
     }
