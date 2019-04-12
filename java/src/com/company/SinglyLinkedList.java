@@ -12,7 +12,6 @@ public class SinglyLinkedList {
         public Node(int data){
             this.data = data;
             this.next = null;
-
         }
     }
 
@@ -108,10 +107,20 @@ public class SinglyLinkedList {
             return res;
         }
         return currentNode;
+    }
 
+    public Node reverse(){
+        Node currentNode = dummyHead;
+        Node nextNode = null;
+        Node prevNode = null;
+        while(currentNode!=null){
+            nextNode = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = nextNode;
 
-
-
+        }
+        return prevNode;
     }
     public void printLinkedList(){
         if (isEmpty()){
@@ -136,8 +145,10 @@ public class SinglyLinkedList {
         singlyLinkedList.deleteFirstNode();
         singlyLinkedList.deleteLastNode();
         singlyLinkedList.printLinkedList();
-        Node node = singlyLinkedList.find(3);
-        System.out.println(node.data);
+        Node node = singlyLinkedList.find(2);
+        System.out.printf("the node your want to find is %d\n",node.data);
+        Node head = singlyLinkedList.reverse();
+        System.out.println(head.next.data);
 
 
     }
