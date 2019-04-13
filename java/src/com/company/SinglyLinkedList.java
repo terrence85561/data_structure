@@ -138,6 +138,34 @@ public class SinglyLinkedList {
         return midPtr;
     }
 
+    public Node findLastNthNode(Node head,int index){
+        Node fastPtr = head;
+        Node slowPtr = head;
+        int counter = 0;
+        while(counter < index){
+            fastPtr = fastPtr.next;
+            counter++;
+        }
+        while(fastPtr!=null){
+            fastPtr = fastPtr.next;
+            slowPtr = slowPtr.next;
+        }
+        return slowPtr;
+    }
+
+    public void insertNodeIntoSortedList(Node node){
+        Node currentNode = dummyHead;
+        Node temp = null;
+        while(currentNode!=null && currentNode.data<node.data){
+            temp = currentNode;
+            currentNode = currentNode.next;
+        }
+        if(currentNode!=null){
+            node.next = currentNode;
+        }
+        temp.next = node;
+
+    }
     public void printLinkedList(Node head){
         System.out.printf("print linkedlist:\n");
 
@@ -162,6 +190,9 @@ public class SinglyLinkedList {
         singlyLinkedList.insertAtIndex(3,5);
         singlyLinkedList.printLinkedList(singlyLinkedList.dummyHead);
 
+        Node lastNode = singlyLinkedList.findLastNthNode(singlyLinkedList.dummyHead,3);
+        System.out.printf("the last n node you want to find is %d\n",lastNode.data);
+
         singlyLinkedList.deleteFirstNode();
         singlyLinkedList.deleteLastNode();
         Node head = singlyLinkedList.getHead();
@@ -175,6 +206,16 @@ public class SinglyLinkedList {
         singlyLinkedList.printLinkedList(reverseHead);
         midNode = singlyLinkedList.findMidNodeOfList(reverseHead);
         System.out.printf("the value of middle node in this linkedlist is %d\n",midNode.data);
+
+        SinglyLinkedList ll = new SinglyLinkedList();
+        ll.push_back(1);
+        ll.push_back(2);
+        ll.push_back(3);
+        ll.push_back(4);
+        ll.push_back(6);
+        Node newNode = new Node(5);
+        ll.insertNodeIntoSortedList(newNode);
+        ll.printLinkedList(ll.dummyHead);
 
     }
 }

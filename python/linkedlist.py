@@ -34,7 +34,7 @@ class LinkedList:
             prevNode = self.dummyNode
             while(prevNode.next != None):
                 prevNode = prevNode.next
-            prevNode.next = newNode
+            prevNode.next = newNode 
 
         
     def insertAfterNode(self,prevNode,val):
