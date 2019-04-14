@@ -6,6 +6,7 @@ public class testFinal {
 
     private final double[] coords;
     public testFinal(double[] a){
+        System.out.println(Arrays.toString(a));
         coords = a;
     }
     public double[] getCoords(){
