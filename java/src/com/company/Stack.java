@@ -1,8 +1,9 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
-public class Stack {
+public class Stack implements Iterable {
 
     private int[] stackArr;
     int index = 0;
@@ -48,6 +49,26 @@ public class Stack {
     }
 
 
+
+
+    @Override
+    public Iterator iterator() {
+        return new ReverseArrayIterator();
+    }
+
+    private class ReverseArrayIterator implements Iterator{
+        private int i = index;
+        @Override
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        @Override
+        public Integer next() {
+            return stackArr[--i];
+        }
+    }
+
     public static void main(String[] args) {
         Stack stack = new Stack();
         stack.push(1);
@@ -58,14 +79,17 @@ public class Stack {
         stack.push(6);
         stack.push(7);
         stack.push(8);
-        System.out.println(Arrays.toString(stack.getStack()));
-        stack.pop();
-        stack.pop();
-        stack.pop();
-        stack.pop();
-        stack.pop();
-        stack.pop();
-        System.out.println(Arrays.toString(stack.getStack()));
+        Iterator<Integer> i = stack.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+//        stack.pop();
+//        stack.pop();
+//        stack.pop();
+//        stack.pop();
+//        stack.pop();
+//        stack.pop();
+//        System.out.println(Arrays.toString(stack.getStack()));
 
     }
 }

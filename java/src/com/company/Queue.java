@@ -2,42 +2,70 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Queue {
-    private int[] queue;
-    private int index = 0;
-
-    public int[] getQueue(){
-        return this.queue;
+public class Queue<T> {
+    private Node dummyHead = null;
+    private Node currentNode = null;
+    private Node pastNode = null;
+    private int size = 0;
+    private class Node{
+        T data;
+        Node next;
     }
 
-    public Queue(){
-        queue = new int[1];
+    public boolean isEmpty(){
+        return dummyHead==null;
     }
 
-    public void push(int data){
-        if(index==queue.length){
-            resize(queue.length*2);
+    public int getSize(){
+        return size;
+    }
+
+    public void enQueue(T data){
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = null;
+        if(isEmpty()){
+            dummyHead = newNode;
+        }else{
+            currentNode = dummyHead;
+            while(currentNode.next!=null){
+                currentNode = currentNode.next;
+            }
+            currentNode.next = newNode;
+            size++;
         }
-        queue[index] = data;
-        index++;
     }
 
-    public void resize(int size){
-        int[] newQueue = new int[size];
-        for (int i = 0; i<index; i++){
-            newQueue[i] = queue[i];
+    public T deQueue(){
+        T result = dummyHead.data;
+        pastNode = dummyHead;
+        dummyHead = dummyHead.next;
+        pastNode = null;
+        size--;
+        return result;
+
+
+    }
+
+    public void printQueue(){
+        Node temp = dummyHead;
+        if (isEmpty()){
+            return;
         }
-        queue = newQueue;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp = temp.next;
+
+        }
     }
 
     public static void main(String[] args) {
-        Queue queue = new Queue();
-        queue.push(1);
-        queue.push(2);
-        queue.push(3);
-        queue.push(4);
-        queue.push(5);
-        System.out.println(Arrays.toString(queue.getQueue()));
-
+        Queue<String> queue = new Queue<String>();
+        queue.enQueue("1");
+        queue.enQueue("2");
+        queue.enQueue("3");
+        queue.printQueue();
+        queue.deQueue();
+        queue.printQueue();
     }
 }
