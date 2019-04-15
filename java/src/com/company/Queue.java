@@ -3,9 +3,8 @@ package com.company;
 import java.util.Arrays;
 
 public class Queue<T> {
-    private Node dummyHead = null;
-    private Node currentNode = null;
-    private Node pastNode = null;
+    private Node first = null;
+    private Node last = null;
     private int size = 0;
     private class Node{
         T data;
@@ -13,7 +12,7 @@ public class Queue<T> {
     }
 
     public boolean isEmpty(){
-        return dummyHead==null;
+        return size == 0;
     }
 
     public int getSize(){
@@ -25,22 +24,24 @@ public class Queue<T> {
         newNode.data = data;
         newNode.next = null;
         if(isEmpty()){
-            dummyHead = newNode;
+            first = newNode;
+            last = first;
         }else{
-            currentNode = dummyHead;
-            while(currentNode.next!=null){
-                currentNode = currentNode.next;
-            }
-            currentNode.next = newNode;
-            size++;
+            last.next = newNode;
+            last = newNode;
         }
+        size++;
+
     }
 
     public T deQueue(){
-        T result = dummyHead.data;
-        pastNode = dummyHead;
-        dummyHead = dummyHead.next;
-        pastNode = null;
+        T result = first.data;
+        Node temp = first;
+        first = first.next;
+        temp = null;
+        if(isEmpty()){
+            last = null;
+        }
         size--;
         return result;
 
@@ -48,7 +49,7 @@ public class Queue<T> {
     }
 
     public void printQueue(){
-        Node temp = dummyHead;
+        Node temp = first;
         if (isEmpty()){
             return;
         }

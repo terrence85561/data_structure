@@ -2,44 +2,46 @@ package com.company;
 
 public class LinkedStack<T> {
     // implement stack using linkedlist
-    private Node dummyHead = null;
+    private Node first = null;
+    private int size = 0;
     private class Node{
         T data;
         Node next;
     }
 
     public boolean isEmpty(){
-        return dummyHead == null;
+        return size == 0;
     }
 
     public void push(T data){
-        Node old_head = dummyHead;
-        dummyHead = new Node();
-        dummyHead.data = data;
-        dummyHead.next = old_head;
+        Node old_first = first;
+        first = new Node();
+        first.data = data;
+        first.next = old_first;
+        size++;
     }
 
     public T pop(){
-        T data = dummyHead.data;
-        dummyHead = dummyHead.next;
+        T data = first.data;
+        first = first.next;
         return data;
     }
 
     public void deleteList(){
-        Node head = dummyHead;
+        Node head = first;
         while(head!=null){
             Node temp = head;
             head = null;
             head = temp.next;
         }
-        dummyHead = null;
+        first = null;
     }
 
     public void printList(){
         if (isEmpty()){
             System.out.println("deleted");
         }
-        Node currentNode = dummyHead;
+        Node currentNode = first;
         while(currentNode!=null){
             System.out.println(currentNode.data);
             currentNode = currentNode.next;
