@@ -61,7 +61,7 @@ public class Queue<T> {
     }
 
     public static void main(String[] args) {
-        Queue<String> queue = new Queue<String>();
+        Queue<String> queue = new Queue<>();
         queue.enQueue("1");
         queue.enQueue("2");
         queue.enQueue("3");

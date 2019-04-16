@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0bbdee6-dd7d-479e-abff-0916ef8ee925" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/company/LinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LinkedStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SinglyLinkedList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,27 +17,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Queue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="945">
+              <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
               <folding>
                 <element signature="e#287#288#0" expanded="true" />
                 <element signature="e#310#311#0" expanded="true" />
                 <element signature="e#298#299#0" expanded="true" />
                 <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#940#948#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/SinglyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1991">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="166">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="e#352#353#0" expanded="true" />
                 <element signature="e#384#385#0" expanded="true" />
@@ -69,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/LinkedStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
+            <state relative-caret-position="80">
               <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
               <folding>
                 <element signature="e#221#222#0" expanded="true" />
@@ -101,10 +100,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/company/testRef.java" />
         <option value="$PROJECT_DIR$/src/com/company/testFinal.java" />
-        <option value="$PROJECT_DIR$/src/com/company/SinglyLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/company/Stack.java" />
         <option value="$PROJECT_DIR$/src/com/company/LinkedStack.java" />
         <option value="$PROJECT_DIR$/src/com/company/Queue.java" />
+        <option value="$PROJECT_DIR$/src/com/company/SinglyLinkedList.java" />
       </list>
     </option>
   </component>
@@ -312,6 +311,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding>
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -330,20 +342,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/SinglyLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1991">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LinkedStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
+        <state relative-caret-position="80">
           <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
           <folding>
             <element signature="e#221#222#0" expanded="true" />
@@ -352,16 +353,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Queue.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/SinglyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="166">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#940#948#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -93,10 +93,6 @@ public class SinglyLinkedList {
         prevNode.next = null;
     }
 
-//    public void deleteAtIndex(int index){
-//
-//    }
-
     public Node find(int index){
         int count = 0;
         Node currentNode = dummyHead;
