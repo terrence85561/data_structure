@@ -13,7 +13,7 @@ def binary_search(input_array, value):
            return mid
     return -1
 
-if if __name__ == "__main__":
+if __name__ == "__main__":
     test_list = [1,3,9,11,15,19,29]
     test_val1 = 25
     test_val2 = 15
