@@ -15,6 +15,15 @@ public class Sort {
         }
     }
 
+    public static void insertionSort(Comparable[] a){
+        int size = a.length;
+        for(int i=1; i<size; i++){
+            for(int j=i; j>0 && less(a[j],a[j-1]); j--){
+                swap(a,j,j-1);
+            }
+        }
+    }
+
     private static boolean less(Comparable v, Comparable w){
         return v.compareTo(w) < 0;
     }
@@ -43,7 +52,7 @@ public class Sort {
     public static void main(String[] args) {
 
         Integer[] input = new Integer[]{31, 18, 20, 17, 18, 36, 44, 35, 22, 14};
-        selectionSort(input);
+        insertionSort(input);
         if(isSorted(input)){
             show(input);
         }else{
