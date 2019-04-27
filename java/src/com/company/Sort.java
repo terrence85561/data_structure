@@ -24,6 +24,22 @@ public class Sort {
         }
     }
 
+    public static void shellSort(Comparable[] a){
+        int size = a .length;
+        int h = 1; //using Knuth
+        while(h<size/3){
+            h = 3*h+1;
+        }
+        while(h>=1){
+            for(int i = h;i<size;i++){
+                for(int j = i; j>=h && less(a[j],a[j-h]);j-=h){
+                    swap(a,j,j-h);
+                }
+            }
+            h = h/3;
+        }
+    }
+
     private static boolean less(Comparable v, Comparable w){
         return v.compareTo(w) < 0;
     }
@@ -52,7 +68,7 @@ public class Sort {
     public static void main(String[] args) {
 
         Integer[] input = new Integer[]{31, 18, 20, 17, 18, 36, 44, 35, 22, 14};
-        insertionSort(input);
+        shellSort(input);
         if(isSorted(input)){
             show(input);
         }else{
