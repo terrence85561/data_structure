@@ -16,9 +16,6 @@ public class mergeSort {
             else if(aux_j > hi){
                 a[i] = aux[aux_k];
                 aux_k++;
-            }else if(less(aux[aux_k],aux[aux_j])){
-                a[i] = aux[aux_k];
-                aux_k++;
             }
             else if(less(aux[aux_j],aux[aux_k])){
                 a[i] = aux[aux_j];
@@ -57,7 +54,7 @@ public class mergeSort {
     }
 
     public static void main(String[] args) {
-        Integer[] input = new Integer[]{31, 18, 20, 17, 18, 36, 44, 35, 22, 14};
+        Integer[] input = new Integer[]{31, 18, 20, 17, 18, 36, 44, 35, 22, 14,19090,19090};
         sort(input);
         show(input);
     }
