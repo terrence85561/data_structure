@@ -1,5 +1,5 @@
 def mergeSort(ip_arr):
-    aux_arr = [0 for i in ip_arr]
+    aux_arr = [i for i in ip_arr]
     size = len(ip_arr)
     lo = 0
     hi = size - 1
