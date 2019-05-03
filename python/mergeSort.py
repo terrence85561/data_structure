@@ -32,10 +32,21 @@ def mergeSort(ip_arr):
         __sort(ip_arr,aux_arr,mid+1,hi)
         __merge(ip_arr,aux_arr,lo,mid,hi)
     
+    def __sortBottomUp(ip_arr,aux_arr):
+        N = len(ip_arr)
+        sz = 1
+        while(sz<N):
+            lo = 0
+            while(lo<N-sz):
+                __merge(ip_arr,aux_arr,lo,lo+sz-1,min(N-1,lo+2*sz-1))
+                lo=lo+sz*2
+            sz *= 2
+            
     def __show():
         print(ip_arr)
     
-    __sort(ip_arr,aux_arr,lo,hi)
+    # __sort(ip_arr,aux_arr,lo,hi)
+    __sortBottomUp(ip_arr,aux_arr)
     __show()
 if __name__ == "__main__":
     ip_arr = [31, 18, 20, 17, 18, 36, 44, 35, 22, 14]
