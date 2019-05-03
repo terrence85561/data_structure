@@ -38,6 +38,16 @@ public class mergeSort {
         merge(a,aux,lo,mid,hi);
     }
 
+    private static void sortBottomUp(Comparable[] a,Comparable[] aux){
+        int a_size = a.length;
+        for(int size=1; size<a_size; size=size*2){
+            // size here is the size of sub array that to be compared
+            for(int lo=0; lo<a_size-size; lo=lo+size*2){
+                merge(a,aux,lo,lo+size-1,Math.min(a_size-1,lo+2*size-1));
+            }
+
+        }
+    }
     private static boolean less(Comparable v,Comparable w){
         return v.compareTo(w)<0;
     }
