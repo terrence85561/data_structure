@@ -92,8 +92,6 @@ public class HeapPriorityQueue<Key extends Comparable<Key>> {
         System.out.printf("The max is %s \n",max);
         pq.showPQ();
 
-
-
     }
 }
 
