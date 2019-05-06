@@ -3,6 +3,8 @@ package com.company;
 import java.util.Random;
 
 public class QuickSort {
+    // java use tuned quicksort for primitive types. Since the performance will be the
+    // first thing to consider when sorting primitive types.
 
     private static void shuffle(Comparable[] a){
         // need shuffle the array first to get better performance
@@ -30,7 +32,7 @@ public class QuickSort {
                 }
             }
             while(less(a[pivot],a[--j])){
-                if(i==lo){
+                if(j==lo){
                     break;
                 }
             }
@@ -95,4 +97,5 @@ public class QuickSort {
         Integer[] input = new Integer[]{31, 18, 20, 17, 18, 36, 44, 35, 22, 14,19090,19090};
         sort(input);
     }
+
 }

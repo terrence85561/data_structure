@@ -1,7 +1,8 @@
 package com.company;
 
 public class mergeSort {
-
+    // java use merge sort for objects, since designer thinks that when sorting objects,
+    // space wont be a big problem.
     private static void merge(Comparable[] a,Comparable[] aux,int lo,int mid,int hi){
         for(int i = lo; i<=hi; i++){
             aux[i] = a[i];
