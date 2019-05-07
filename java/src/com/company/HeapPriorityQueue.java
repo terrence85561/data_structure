@@ -68,7 +68,7 @@ public class HeapPriorityQueue<Key extends Comparable<Key>> {
     }
 
     private void sink(int index){
-        while(pq[2*index]!=null){
+        while(2*index<=N){
             int larger_child = 2*index;
             if(larger_child<N && less(pq[larger_child],pq[larger_child+1])){
                 larger_child = larger_child + 1;
