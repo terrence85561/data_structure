@@ -22,8 +22,9 @@ class HeapPrioirtyQueue:
     def __sink(self,idx,last_idx):
         while((2*idx)+1 <= last_idx):
             larger_child = (2*idx)+1
-            if self.__isLess(self.pq[larger_child],self.pq[larger_child+1]) and larger_child < last_idx:
-                larger_child = larger_child+1
+            if larger_child < last_idx:
+                if self.__isLess(self.pq[larger_child],self.pq[larger_child+1]):
+                    larger_child = larger_child+1
             if self.__isLess(self.pq[larger_child],self.pq[idx]):
                 break
             self.__swap(idx,larger_child)
