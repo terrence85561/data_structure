@@ -52,9 +52,10 @@ public class HeapSort {
         heapify(a);
         int size = a.length;
         int idx = size - 1;
-        while(idx>=0){
+//        show(a);
+        while(idx>1){
             swap(a,0,idx--);
-            sink(a,0,size);
+            sink(a,0,idx);
         }
         show(a);
     }
