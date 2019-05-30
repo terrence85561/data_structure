@@ -12,7 +12,7 @@ public class HeapSort {
     private static void sink(Comparable[] a,int index,int size){
         while(2*index+1<=size-1){
             int larger_child = 2*index+1;
-            if(larger_child<size && less(a[larger_child],a[larger_child+1])){
+            if(larger_child<size-1 && less(a[larger_child],a[larger_child+1])){
                 larger_child++;
             }
             if(less(a[larger_child],a[index])){
@@ -61,7 +61,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        String[] arr = new String[]{"T","G","S","H","R","I","P","E","N","A","O"};
+        String[] arr = new String[]{"T","G","S","H","R","I","P","E","N","A"};
         sort(arr);
 
     }
