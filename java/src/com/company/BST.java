@@ -8,54 +8,58 @@ public class BST <Key extends Comparable<Key>, Value> {
         private Key key;
         private Value value;
         private Node left,right;
-        public Node(Key key, Value value){
+        private int N;
+        public Node(Key key, Value value, int N){
             this.key = key;
             this.value = value;
+            this.N = N;
         }
     }
 
-    public void put(Key key, Value value){
-        root = put(root, key, value);
+    public int size(){return size(root);}
+    private int size(Node x){
+        if(x==null) return 0;
+        else        return x.N;
     }
 
     public Value get(Key key){
-        Node current = root;
-        while(current!=null) {
-            if (key.compareTo(current.key) > 0) {
-                current = current.right;
-            }
-            else if(key.compareTo(current.key) < 0){
-                current = current.left;
-            }
-            else{
-                return current.value;
-            }
+        return get(root, key);
+    }
+
+    private Value get(Node x, Key key){
+        if(x == null) return null;
+        int cmp = key.compareTo(x.key);
+        if(cmp > 0){
+            return get(x.right, key);
+        } else if (cmp < 0) {
+            return get(x.left, key);
+        } else {
+            return x.value;
         }
-        return null;
     }
 
-    public void delete(Key key){
-
+    public void put(Key key, Value val){
+        root = put(root, key ,val);
     }
 
-    public Iterable<Key> iterator(){
-
-    }
-
-    private Node put(Node node, Key key, Value value){
-        if(node == null){
-            return new Node(key, value);
-        }
-        int cmp = key.compareTo(node.key);
+    private Node put(Node x, Key key, Value val){
+        if(x == null) return new Node(key, val, 1);
+        int cmp = key.compareTo(x.key);
         if(cmp < 0){
-            node.left = put(node.left, key, value);
+            x.left = put(x.left, key, val);
+        } else if(cmp > 0){
+            x.right = put(x.right, key, val);
+        } else{
+            x.value = val;
         }
-        else if (cmp > 0){
-            node.right = put(node.right, key, value);
-        }
-        else{
-            node.value = value;
-        }
-        return node;
+        x.N = size(x.left) + size(x.right) + 1;
+        return x;
     }
+
+
+
+
+
+
+
 }
